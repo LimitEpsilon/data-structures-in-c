@@ -110,7 +110,7 @@ static void balance(rb_node **bucket, rb_node *node)
 			if (what_child_am_i(node) != dir) {
 				node = this_side;
 				rotate(dir, bucket, node);
-        this_side = node->parent;
+				this_side = node->parent;
 			}
 			this_side->color = Black;
 			this_side->parent->color = Red;
@@ -165,7 +165,7 @@ void *delete (rb_node *node)
 	return 0;
 }
 
-rb_node *find (char *key)
+rb_node *find(char *key)
 {
 	return _find(*(hashTable + hash(key)), key);
 }

@@ -109,9 +109,8 @@ static void balance(rb_node **bucket, rb_node *node)
 		} else {
 			if (what_child_am_i(node) != dir) {
 				node = this_side;
-				this_side =
-					node; /* rotation changes node's parent */
 				rotate(dir, bucket, node);
+        this_side = node->parent;
 			}
 			this_side->color = Black;
 			this_side->parent->color = Red;
